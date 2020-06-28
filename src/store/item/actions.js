@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Notify } from 'quasar'
 
-const url = 'https://buyforme.now.sh/items'
+const url = 'https://todogroup.vercel.app/items'
 
 export async function createItem (context, oldAndNewItems) {
   return await axios.post(`${url}`, oldAndNewItems)

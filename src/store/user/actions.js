@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Notify } from 'quasar'
 
-const url = 'https://buyforme.now.sh/users'
+const url = 'https://todogroup.vercel.app/users'
 
 export function saveUser (context, user) {
   console.log('action Users')

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Notify } from 'quasar'
 
-const url = 'https://buyforme.now.sh/groups'
+const url = 'https://todogroup.vercel.app/groups'
 
 export function getGroups (context, userid) {
   axios.get(`${url}?userid=${userid}`)
