@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/users/list", "methods": ["GET", "OPTIONS"], "dest": "api/getUsersList.js" },
+    { "src": "/users", "methods": ["POST", "OPTIONS"], "dest": "api/postUsers.js" },
+    { "src": "/users/creategroup", "methods": ["POST", "OPTIONS"], "dest": "api/postCreateGroup.js" },
+    { "src": "/groups/getgroup", "methods": ["GET", "OPTIONS"], "dest": "api/getGroup.js" },
+    { "src": "/groups", "methods": ["GET", "OPTIONS"], "dest": "api/getGroups.js" },
+    { "src": "/groups/addusertogroup", "methods": ["POST", "OPTIONS"], "dest": "api/addUserToGroup.js" },
+    { "src": "/groups/updategroupitems", "methods": ["POST", "OPTIONS"], "dest": "api/updateGroupItems.js" },
+    { "src": "/items/list", "methods": ["GET", "OPTIONS"], "dest": "api/getItemsList.js" },
+    { "src": "/items", "methods": ["POST", "OPTIONS"], "dest": "api/updateItem.js" },
+    { "src": "/", "dest": "dist/pwa/" }
+  ],
+  "env": {
+    "DB_URI": "@db-uri"
+  }
+}
