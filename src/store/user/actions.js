@@ -3,10 +3,10 @@ import { Notify } from 'quasar'
 
 const url = 'https://todogroup.vercel.app/users'
 
-export function saveUser (context, user) {
+export async function saveUser (context, user) {
   console.log('action Users')
   console.log(user)
-  axios.post(`${url}`, user)
+  await axios.post(`${url}`, user)
     .then((response) => {
       // console.log('response saveUser')
       // console.log(response.data.msg)
@@ -28,10 +28,10 @@ export function saveUser (context, user) {
     })
 }
 
-export function loginUser (context, user) {
+export async function loginUser (context, user) {
   // console.log('action loginUser')
   // console.log(user, `  ====   url ===   ${url}login`)
-  axios.post(`${url}`, user)
+  await axios.post(`${url}`, user)
     .then((response) => {
       console.log('response loginUser')
       console.log(response.data.msg)
