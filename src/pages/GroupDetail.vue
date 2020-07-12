@@ -230,17 +230,7 @@ export default {
     }
   },
   created () {
-    let groupid
-    if (this.$q.cookies.has('groupid') &&
-      this.$q.cookies.get('groupid') !== null &&
-      this.$q.cookies.get('groupid') !== 'undefined') {
-      groupid = this.$q.cookies.get('groupid')
-      // console.log('Get user by cookies groupid')
-      // console.log(groupid)
-      this.$store.dispatch('group/getGroup', groupid)
-    } else {
-      this.$router.push('/')
-    }
+    this.fetchGroup()
     this.unsubscribe = this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'group/setGroup') {
         // console.log('subscribe group = ', state.group.group)
@@ -248,11 +238,26 @@ export default {
         this.$store.dispatch('item/getItemsByIds', state.group.group.items)
       }
     })
+    this.timer = setInterval(this.fetchGroup, 10000)
   },
   beforeDestroy () {
     this.unsubscribe()
+    clearInterval(this.timer)
   },
   methods: {
+    fetchGroup () {
+      let groupid
+      if (this.$q.cookies.has('groupid') &&
+      this.$q.cookies.get('groupid') !== null &&
+      this.$q.cookies.get('groupid') !== 'undefined') {
+        groupid = this.$q.cookies.get('groupid')
+        // console.log('Get user by cookies groupid')
+        // console.log(groupid)
+        this.$store.dispatch('group/getGroup', groupid)
+      } else {
+        this.$router.push('/')
+      }
+    },
     openItemDetail (item) {
       // console.log(item)
       this.itemDetail = true

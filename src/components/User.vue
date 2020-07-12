@@ -77,6 +77,7 @@ export default {
       }
       if (!this.newUser && !this.editUser) {
         this.$store.dispatch('user/loginUser', user)
+          .then(this.$router.push('/'))
       } else {
         user.phone = this.phone
         if (this.newUser) {
@@ -85,8 +86,8 @@ export default {
           user.id = this.getUser._id
         }
         this.$store.dispatch('user/saveUser', user)
+          .then(this.$router.push('/'))
       }
-      this.$router.push('/')
     },
     onReset () {
       this.name = ''
