@@ -1,9 +1,12 @@
-# Quasar App (todogroup)
+# Shopping-lists
 
 A Quasar Framework app
 
-### Several users can fill out one to-do list. The to-do list is stored in the Mongodb database. Vercel serverless api gets access to the database. Use the next credentials for demo access (or register yourself): 
-### User1 - pass1, User2 - pass2.
+### Several users can fill out one to-do list. The to-do list is stored in the Mongodb database. Vercel serverless api gets access to the database.
+#### Demo access:
+#### login Saha2, password s222
+
+https://buyforme.now.sh/
 
 ## Install the dependencies
 ```bash
