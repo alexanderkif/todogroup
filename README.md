@@ -6,7 +6,7 @@ A Quasar Framework app
 #### Demo access:
 #### login Saha2, password s222
 
-https://buyforme.now.sh/
+https://buyforme.vercel.app/
 
 ## Install the dependencies
 ```bash
